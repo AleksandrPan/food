@@ -2,7 +2,7 @@ import Card from '../Card/Card';
 import './style.css';
 
 
-const CardList = ({goods}) => {
+const CardList = ({goods, onProductLike, currentUser}) => {
 
     return (
 
@@ -10,7 +10,7 @@ const CardList = ({goods}) => {
             {
                 goods.map(function(item, index){
                     return(
-                    <Card key={index}{...item}/>
+                    <Card key={item._id}{...item} onProductLike={onProductLike} currentUser={currentUser}/>
                     )
                     
                 })
